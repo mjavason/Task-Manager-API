@@ -2,9 +2,9 @@ import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 // export const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
 export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'access-token-secret';
-export const APP_NAME = process.env.APP_NAME || 'Hotel-Reservation-and-Booking-API';
+export const APP_NAME = process.env.APP_NAME || 'Task-Manager-API';
 export const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
-export const DB_NAME = process.env.MONGO_DB_NAME || 'hotel-reservation-and-booking';
+export const DB_NAME = process.env.MONGO_DB_NAME || 'task-manager-api';
 export const DB_CONNECTION_STRING =
   process.env.MONGO_DB_URL + DB_NAME || 'mongodb://localhost:27017/' + DB_NAME;
 export const JWT_SECRET = process.env.JWT_SECRET || 'jwt-secret';
