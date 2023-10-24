@@ -22,6 +22,41 @@ API documentation is available through Swagger and can be accessed [here](https:
    - Command: `npm run dev`
    - Description: During development, use this script to start the API with live-reloading and other helpful tools. It's perfect for debugging and testing.
 
+## Setting Up Environment Variables
+
+Before running the Task Manager API, you need to set up the following environment variables. Create a `.env` file in the project root and add these variables with your own values:
+
+```env
+# Secret key for access token (replace 'xxxx' with your own secret)
+ACCESS_TOKEN_SECRET=xxxx
+
+# Application name (e.g., 'TemplateApp')
+APP_NAME=TemplateApp
+
+# Secret key for JWT (replace 'user' with your own secret)
+JWT_SECRET=user
+
+# Email address for sending emails (replace 'xxxx@mail.com' with your own email)
+MAIL_ADDRESS=xxxx@mail.com
+
+# Password for the email address (replace 'xxxx' with your own password)
+MAIL_PASSWORD=xxxx
+
+# MongoDB connection URL (replace 'xxxx' with your MongoDB URL)
+MONGODB_URL=xxxx
+
+# Name of the MongoDB database (replace 'xxxx' with your database name)
+MONGO_DB_NAME=xxxx
+
+# Secret key for refresh token (replace 'xxxx' with your own secret)
+REFRESH_TOKEN_SECRET=xxxx
+
+# Link to your site (replace 'xxxx' with your site link)
+SITE_LINK=xxxx
+
+# Default username (e.g., 'user@mail.com')
+USERNAME=user@mail.com
+
 ## Getting Started
 
 To get started with the Task Manager API, follow these steps:
