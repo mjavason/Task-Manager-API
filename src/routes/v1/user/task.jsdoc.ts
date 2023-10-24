@@ -1,116 +1,116 @@
 /**
  * @swagger
- * /rooms/search:
+ * /tasks/search:
  *   get:
- *     summary: Search for rooms
- *     description: Search for rooms based on query parameters
+ *     summary: Search for tasks
+ *     description: Search for tasks based on query parameters
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     parameters:
  *       - in: query
  *         name: query
- *         description: The query parameters for room search
+ *         description: The query parameters for task search
  *         schema:
- *           $ref: '#/components/schemas/RoomQuery'
+ *           $ref: '#/components/schemas/TaskQuery'
  *     responses:
  *       '200':
- *         description: Successfully retrieved rooms
+ *         description: Successfully retrieved tasks
  *       '400':
  *         description: Bad request
  */
 
 /**
  * @swagger
- * /rooms/count:
+ * /tasks/count:
  *   get:
- *     summary: Get the count of rooms
- *     description: Get the total count of rooms based on query parameters
+ *     summary: Get the count of tasks
+ *     description: Get the total count of tasks based on query parameters
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     parameters:
  *       - in: query
  *         name: query
- *         description: The query parameters for room count
+ *         description: The query parameters for task count
  *         schema:
- *           $ref: '#/components/schemas/RoomQuery'
+ *           $ref: '#/components/schemas/TaskQuery'
  *     responses:
  *       '200':
- *         description: Successfully retrieved the room count
+ *         description: Successfully retrieved the task count
  *       '400':
  *         description: Bad request
  */
 
 /**
  * @swagger
- * /rooms/exists:
+ * /tasks/exists:
  *   get:
- *     summary: Check if rooms exist
- *     description: Check if rooms exist based on query parameters
+ *     summary: Check if tasks exist
+ *     description: Check if tasks exist based on query parameters
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     parameters:
  *       - in: query
  *         name: query
- *         description: The query parameters for checking room existence
+ *         description: The query parameters for checking task existence
  *         schema:
- *           $ref: '#/components/schemas/RoomQuery'
+ *           $ref: '#/components/schemas/TaskQuery'
  *     responses:
  *       '200':
- *         description: Successfully checked room existence
+ *         description: Successfully checked task existence
  *       '400':
  *         description: Bad request
  */
 
 /**
  * @swagger
- * /rooms:
+ * /tasks:
  *   get:
- *     summary: Get all rooms
- *     description: Get a list of all rooms
+ *     summary: Get all tasks
+ *     description: Get a list of all tasks
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     responses:
  *       '200':
- *         description: Successfully retrieved all rooms
+ *         description: Successfully retrieved all tasks
  *   post:
- *     summary: Create a new room
- *     description: Create a new room with the provided data
+ *     summary: Create a new task
+ *     description: Create a new task with the provided data
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     requestBody:
- *       description: Room object to create
+ *       description: Task object to create
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/RoomCreate'
+ *             $ref: '#/components/schemas/TaskCreate'
  *     responses:
  *       '200':
- *         description: Successfully created a new room
+ *         description: Successfully created a new task
  *       '400':
  *         description: Bad request
  */
 
 /**
  * @swagger
- * /rooms/{pagination}:
+ * /tasks/{pagination}:
  *   get:
- *     summary: Get rooms with pagination
- *     description: Get a list of rooms with pagination
+ *     summary: Get tasks with pagination
+ *     description: Get a list of tasks with pagination
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     parameters:
  *       - in: path
  *         name: pagination
@@ -119,58 +119,58 @@
  *           type: string
  *     responses:
  *       '200':
- *         description: Successfully retrieved rooms with pagination
+ *         description: Successfully retrieved tasks with pagination
  */
 
 /**
  * @swagger
- * /rooms/{id}:
+ * /tasks/{id}:
  *   patch:
- *     summary: Update a room
- *     description: Update an existing room with the provided data
+ *     summary: Update a task
+ *     description: Update an existing task with the provided data
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     parameters:
  *       - in: path
  *         name: id
- *         description: The ID of the room to update
+ *         description: The ID of the task to update
  *         schema:
  *           type: string
  *     requestBody:
- *       description: Room object to update
+ *       description: Task object to update
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/RoomUpdate'
+ *             $ref: '#/components/schemas/TaskUpdate'
  *     responses:
  *       '200':
- *         description: Successfully updated the room
+ *         description: Successfully updated the task
  *       '400':
  *         description: Bad request
  */
 
 /**
  * @swagger
- * /rooms/{id}:
+ * /tasks/{id}:
  *   delete:
- *     summary: Delete a room
- *     description: Delete a room based on the provided ID
+ *     summary: Delete a task
+ *     description: Delete a task based on the provided ID
  *     security:
  *       - BearerAuth: []
  *     tags:
- *       - Rooms
+ *       - Tasks
  *     parameters:
  *       - in: path
  *         name: id
- *         description: The ID of the room to delete
+ *         description: The ID of the task to delete
  *         schema:
  *           type: string
  *     responses:
  *       '200':
- *         description: Successfully deleted the room
+ *         description: Successfully deleted the task
  *       '400':
  *         description: Bad request
  */
@@ -179,59 +179,65 @@
  * @swagger
  * components:
  *   schemas:
- *     RoomCreate:
+ *     TaskCreate:
  *       type: object
  *       properties:
- *         room_number:
+ *         user:
  *           type: string
- *         room_type:
+ *         title:
  *           type: string
- *         capacity:
- *           type: number
- *         price_per_night:
- *           type: number
  *         description:
  *           type: string
- *         is_booked:
+ *         dueDate:
+ *           type: string
+ *         priority:
+ *           type: string
+ *         completed:
+ *           type: boolean
+ *         deleted:
  *           type: boolean
  *       required:
- *         - room_number
- *         - room_type
- *         - capacity
- *         - price_per_night
+ *         - user
+ *         - title
  *         - description
- *         - is_booked
- *     RoomUpdate:
+ *         - dueDate
+ *         - priority
+ *         - completed
+ *     TaskUpdate:
  *       type: object
  *       properties:
- *         room_number:
+ *         user:
  *           type: string
- *         room_type:
+ *         title:
  *           type: string
- *         capacity:
- *           type: number
- *         price_per_night:
- *           type: number
  *         description:
  *           type: string
- *         is_booked:
+ *         dueDate:
+ *           type: string
+ *         priority:
+ *           type: string
+ *         completed:
  *           type: boolean
- *     RoomQuery:
+ *         deleted:
+ *           type: boolean
+ *     TaskQuery:
  *       type: object
  *       properties:
  *         _id:
  *           type: string
- *         room_number:
+ *         user:
  *           type: string
- *         room_type:
- *           type: string
- *         capacity:
- *           type: string
- *         price_per_night:
+ *         title:
  *           type: string
  *         description:
  *           type: string
- *         is_booked:
+ *         dueDate:
+ *           type: string
+ *         priority:
+ *           type: string
+ *         completed:
+ *           type: string
+ *         deleted:
  *           type: string
  */
 
