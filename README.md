@@ -56,7 +56,7 @@ SITE_LINK=xxxx
 
 # Default username (e.g., 'user@mail.com')
 USERNAME=user@mail.com
-
+```
 ## Getting Started
 
 To get started with the Task Manager API, follow these steps:
@@ -89,7 +89,7 @@ User authentication is securely handled on the backend with cookies. This ensure
 
 ## Contributing
 
-Contributions to the Event Ticketing API are welcome! If you'd like to contribute:
+Contributions to the API are welcome! If you'd like to contribute:
 
 1. Fork the project on GitHub.
 
