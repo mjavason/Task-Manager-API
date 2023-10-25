@@ -101,7 +101,7 @@
 /**
  * @swagger
  * /auth/logout:
- *   post:
+ *   delete:
  *     summary: Logout user
  *     description: Delete the user token and log them out.
  *     tags: [Authentication]

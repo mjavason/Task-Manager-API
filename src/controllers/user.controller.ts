@@ -157,7 +157,7 @@ class Controller {
   async logout(req: Request, res: Response) {
     const token = req.cookies.token;
 
-    if (!token) NotFoundResponse(res, 'No user logged in currently');
+    if (!token) return NotFoundResponse(res, 'No user logged in currently');
 
     res.clearCookie('token');
 
