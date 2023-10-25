@@ -24,4 +24,6 @@ router.post('/register', processRequestBody(authValidation.register.body), userC
 
 router.post('/login', processRequestBody(authValidation.login.body), userController.login);
 
+router.delete('/logout', userController.logout)
+
 export default router;

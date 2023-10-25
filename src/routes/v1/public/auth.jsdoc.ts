@@ -100,6 +100,20 @@
 
 /**
  * @swagger
+ * /auth/logout:
+ *   post:
+ *     summary: Logout user
+ *     description: Delete the user token and log them out.
+ *     tags: [Authentication]
+ *     responses:
+ *       '200':
+ *         description: User logged out successfully.
+ *       '400':
+ *         description: Bad request.
+ */
+
+/**
+ * @swagger
  * components:
  *   schemas:
  *     RegisterSchema:

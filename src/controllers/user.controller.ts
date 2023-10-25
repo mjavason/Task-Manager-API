@@ -78,13 +78,17 @@ class Controller {
     let accessToken = await signJwt({ _id, role, email }, ACCESS_TOKEN_SECRET, '48h');
     let refreshToken = await signJwt({ _id, role, email }, REFRESH_TOKEN_SECRET, '24h');
 
-    let data = {
-      access_token: accessToken,
-      refresh_token: refreshToken,
-    };
+    res.cookie('token', accessToken, { httpOnly: true });
+
+    return SuccessMsgResponse(res, MESSAGES.LOGGED_IN);
+
+    // let data = {
+    //   access_token: accessToken,
+    //   refresh_token: refreshToken,
+    // };
 
     // Return a success response or the token, depending on your authentication method
-    return SuccessResponse(res, data, MESSAGES.LOGGED_IN);
+    // return SuccessResponse(res, data, MESSAGES.LOGGED_IN);
   }
 
   async resetPasswordMail(req: Request, res: Response) {
@@ -148,6 +152,16 @@ class Controller {
     if (!data) return NotFoundResponse(res);
 
     return SuccessResponse(res, data, MESSAGES.UPDATED);
+  }
+
+  async logout(req: Request, res: Response) {
+    const token = req.cookies.token;
+
+    if (!token) NotFoundResponse(res, 'No user logged in currently');
+
+    res.clearCookie('token');
+
+    return SuccessMsgResponse(res, 'Logged out successfully');
   }
 }
 

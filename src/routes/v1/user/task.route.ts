@@ -22,26 +22,6 @@ router.post('/', processRequestBody(taskValidation.create.body), taskController.
 
 router.patch('/:id', processRequestBody(taskValidation.update.body), taskController.update);
 
-/**
- * @swagger
- * /api/tasks/{id}:
- *   delete:
- *     summary: Delete a task
- *     description: Delete a task based on the provided ID.
- *     parameters:
- *       - in: path
- *         name: id
- *         description: The ID of the task to delete.
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: Successfully deleted the task.
- *       400:
- *         description: Bad request.
- *     tags:
- *       - Tasks
- */
 router.delete('/:id', processRequestParams(taskValidation.delete.params), taskController.delete);
 
 export default router;

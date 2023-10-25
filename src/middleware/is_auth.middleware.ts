@@ -15,9 +15,13 @@ import { verifyJwt } from '../utils/jwt';
 import { ACCESS_TOKEN_SECRET } from '../constants';
 
 const isAuth = async (req: Request, res: Response, next: NextFunction) => {
-  const accessToken = req.headers.authorization?.split(' ')[1] || '';
+  // const accessToken = req.headers.authorization?.split(' ')[1] || '';
+
+  const accessToken = req.cookies.token;
+  console.log(req.cookies.token);
+
   if (!accessToken) {
-    return AccessTokenErrorResponse(res, 'Invalid token');
+    return AccessTokenErrorResponse(res, 'Please login');
   }
   const decoded = await verifyJwt(accessToken, ACCESS_TOKEN_SECRET);
   if (!decoded) {
