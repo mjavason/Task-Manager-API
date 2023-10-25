@@ -5,7 +5,7 @@ interface ITask extends Document {
   user: string | Types.ObjectId;
   title: string;
   description: string;
-  dueDate: Date;
+  due_date: Date;
   priority: 'low' | 'medium' | 'high';
   completed: boolean;
   deleted?: boolean;

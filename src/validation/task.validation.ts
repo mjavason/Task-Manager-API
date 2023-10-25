@@ -10,9 +10,8 @@ class TaskValidation {
       user: z.string(),
       title: z.string(),
       description: z.string(),
-      dueDate: z.date(),
+      due_date: z.string(),
       priority: z.enum(PriorityValues),
-      completed: z.boolean(),
     }),
   };
 
@@ -25,7 +24,7 @@ class TaskValidation {
       user: z.string().optional(),
       title: z.string().optional(),
       description: z.string().optional(),
-      dueDate: z.date().optional(),
+      due_date: z.string().optional(),
       priority: z.enum(PriorityValues).optional(),
       completed: z.boolean().optional(),
       deleted: z.boolean().optional(),
@@ -46,7 +45,7 @@ class TaskValidation {
       user: z.string().optional(),
       title: z.string().optional(),
       description: z.string().optional(),
-      dueDate: z.string().optional(),
+      due_date: z.string().optional(),
       priority: z.enum(PriorityValues).optional(),
       completed: z.string().optional(),
     }),

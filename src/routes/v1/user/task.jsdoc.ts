@@ -4,8 +4,6 @@
  *   get:
  *     summary: Search for tasks
  *     description: Search for tasks based on query parameters
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     parameters:
@@ -27,8 +25,6 @@
  *   get:
  *     summary: Get the count of tasks
  *     description: Get the total count of tasks based on query parameters
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     parameters:
@@ -50,8 +46,6 @@
  *   get:
  *     summary: Check if tasks exist
  *     description: Check if tasks exist based on query parameters
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     parameters:
@@ -73,8 +67,6 @@
  *   get:
  *     summary: Get all tasks
  *     description: Get a list of all tasks
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     responses:
@@ -83,8 +75,6 @@
  *   post:
  *     summary: Create a new task
  *     description: Create a new task with the provided data
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     requestBody:
@@ -107,8 +97,6 @@
  *   get:
  *     summary: Get tasks with pagination
  *     description: Get a list of tasks with pagination
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     parameters:
@@ -128,8 +116,6 @@
  *   patch:
  *     summary: Update a task
  *     description: Update an existing task with the provided data
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     parameters:
@@ -158,8 +144,6 @@
  *   delete:
  *     summary: Delete a task
  *     description: Delete a task based on the provided ID
- *     security:
- *       - BearerAuth: []
  *     tags:
  *       - Tasks
  *     parameters:
@@ -188,21 +172,16 @@
  *           type: string
  *         description:
  *           type: string
- *         dueDate:
+ *         due_date:
  *           type: string
  *         priority:
  *           type: string
- *         completed:
- *           type: boolean
- *         deleted:
- *           type: boolean
  *       required:
  *         - user
  *         - title
  *         - description
- *         - dueDate
+ *         - due_date
  *         - priority
- *         - completed
  *     TaskUpdate:
  *       type: object
  *       properties:
@@ -212,13 +191,11 @@
  *           type: string
  *         description:
  *           type: string
- *         dueDate:
+ *         due_date:
  *           type: string
  *         priority:
  *           type: string
  *         completed:
- *           type: boolean
- *         deleted:
  *           type: boolean
  *     TaskQuery:
  *       type: object
@@ -231,22 +208,10 @@
  *           type: string
  *         description:
  *           type: string
- *         dueDate:
+ *         due_date:
  *           type: string
  *         priority:
  *           type: string
  *         completed:
  *           type: string
- *         deleted:
- *           type: string
- */
-
-/**
- * @swagger
- * components:
- *   securitySchemes:
- *     BearerAuth:
- *       type: http
- *       scheme: bearer
- *       bearerFormat: JWT
  */

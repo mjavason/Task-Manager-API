@@ -79,12 +79,12 @@ export const SWAGGER_OPTIONS = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'Hotel Reservation and Booking API',
+      title: 'Task Manager API',
       version: '1.0.0',
       description:
-        'The Hotel Reservation and Booking API is a comprehensive system for making hotel reservations and managing bookings. It provides functionalities for reserving rooms, managing bookings, and ensuring a smooth booking experience for both users and hotel administrators. This API empowers users to explore, book, and manage hotel accommodations with ease.',
+        'The Task Manager API simplifies task tracking, prioritization, and user authentication with cookie-based sessions. Manage your tasks efficiently and securely, seamlessly integrating the API into your applications.',
       contact: {
-        name: 'Orji Michael Chukwuebuka',
+        name: 'Orji Michael',
         email: 'orjimichael4886@gmail.com',
       },
     },
@@ -104,23 +104,13 @@ export const SWAGGER_OPTIONS = {
     ],
     tags: [
       {
-        name: 'Reservations',
-        description:
-          'API operations related to reservations, including booking, cancellation, and status inquiries.',
-      },
-      {
-        name: 'Rooms',
-        description:
-          'API operations related to rooms, such as room details, availability, and pricing.',
+        name: 'Tasks',
+        description: 'API operations related to tasks, including creation, updates, and deletion.',
       },
       {
         name: 'Authentication',
         description:
-          'API operations related to user authentication and authorization, including login and access control.',
-      },
-      {
-        name: 'Default',
-        description: 'Default and miscellaneous API operations.',
+          'API operations related to user login and authorization with cookie-based sessions.',
       },
     ],
   },
