@@ -1,16 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import {
-  AuthFailureResponse,
-  NotFoundResponse,
-  ForbiddenResponse,
-  BadRequestResponse,
-  InternalErrorResponse,
-  SuccessMsgResponse,
-  FailureMsgResponse,
-  SuccessResponse,
-  AccessTokenErrorResponse,
-  TokenRefreshResponse,
-} from '../helpers/response';
+import { AccessTokenErrorResponse } from '../helpers/response';
 import { verifyJwt } from '../utils/jwt';
 import { ACCESS_TOKEN_SECRET } from '../constants';
 
